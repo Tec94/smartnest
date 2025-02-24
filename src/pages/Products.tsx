@@ -121,7 +121,7 @@ const Products = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Contact our team to learn more about our products and how they can benefit your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary">
+            <Button size="lg" variant="secondary" className="text-primary-foreground/90">
               Get Started Today
             </Button>
           </div>

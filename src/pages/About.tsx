@@ -61,7 +61,7 @@ const About = () => {
         </section>
 
         {/* Problem & Solution Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/10">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground text-center mb-16">
               The Problem & Our Solution

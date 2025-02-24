@@ -20,7 +20,7 @@ const Navigation = () => {
                   <Link to="/">
                     <NavigationMenuLink className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50",
-                      window.location.pathname === "/" && "bg-accent/50"
+                      window.location.pathname === "/" && "bg-accent/20"
                     )}>
                       Home
                     </NavigationMenuLink>
@@ -30,7 +30,7 @@ const Navigation = () => {
                   <Link to="/products">
                     <NavigationMenuLink className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50",
-                      window.location.pathname === "/products" && "bg-accent/50"
+                      window.location.pathname === "/products" && "bg-accent/20"
                     )}>
                       Products
                     </NavigationMenuLink>
@@ -40,7 +40,7 @@ const Navigation = () => {
                   <Link to="/pricing">
                     <NavigationMenuLink className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50",
-                      window.location.pathname === "/pricing" && "bg-accent/50"
+                      window.location.pathname === "/pricing" && "bg-accent/20"
                     )}>
                       Pricing
                     </NavigationMenuLink>
@@ -50,7 +50,7 @@ const Navigation = () => {
                   <Link to="/about">
                     <NavigationMenuLink className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50",
-                      window.location.pathname === "/about" && "bg-accent/50"
+                      window.location.pathname === "/about" && "bg-accent/20"
                     )}>
                       About
                     </NavigationMenuLink>
