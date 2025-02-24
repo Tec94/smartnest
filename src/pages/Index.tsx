@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Baby, Brain, Heart, LineChart, MonitorSmartphone, Shield } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import QuoteCalculator from "@/components/QuoteCalculator";
 
 const Index = () => {
   return (
@@ -75,7 +76,7 @@ const Index = () => {
         </section>
 
         {/* Partners Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/10">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="font-display text-3xl font-bold text-foreground mb-16">
               Trusted by Leading Healthcare Providers
@@ -93,6 +94,12 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Quote generator */}
+        <div className="container mx-auto py-16">
+          <h1 className="text-4xl font-bold text-center mb-8">Business Equipment Quote Calculator</h1>
+          <QuoteCalculator />
+        </div>
+
         {/* CTA Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary">
           <div className="max-w-4xl mx-auto text-center text-white">
@@ -102,7 +109,7 @@ const Index = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Join the revolution in neonatal care. Contact us to learn how SmartNest.ai can benefit your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary">
+            <Button size="lg" variant="secondary" className="text-primary-foreground/90">
               Get Started Today
             </Button>
           </div>
