@@ -93,7 +93,7 @@ const Products = () => {
                       <CardDescription>{plan.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-4">
+                      <ul className="space-y-4 min-h-[160px] flex flex-col justify-start">
                         {plan.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-2">
                             <Shield className="h-4 w-4 text-primary" />
@@ -170,7 +170,7 @@ const subscriptionPlans = [
   },
   {
     name: "Professional",
-    description: "Ideal for medium-sized hospitals and healthcare networks",
+    description: "Ideal for medium-sized healthcare networks",
     features: [
       "Advanced AI diagnostics",
       "Predictive analytics",
