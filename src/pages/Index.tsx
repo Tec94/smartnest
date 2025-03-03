@@ -109,7 +109,7 @@ const Index = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Join the revolution in neonatal care. Contact us to learn how SmartNest.ai can benefit your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary-foreground/90">
+            <Button size="lg" variant="secondary" className="text-primary">
               Get Started Today
             </Button>
           </div>

@@ -127,7 +127,7 @@ const Pricing = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Contact our team to discuss custom pricing options for your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary-foreground/90">
+            <Button size="lg" variant="secondary" className="text-primary">
               Get Custom Quote
             </Button>
           </div>
