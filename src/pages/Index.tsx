@@ -128,12 +128,12 @@ const features = [
   {
     icon: Heart,
     title: "Personalized Monitoring",
-    description: "Adaptive monitoring system that learns and adjusts based on each baby's unique health patterns and needs.",
+    description: "Intelligent monitoring system that adapts in real time to each baby's unique health patterns and needs.",
   },
   {
     icon: Shield,
     title: "Hospital-Grade Precision",
-    description: "Research-backed monitoring accuracy that meets or exceeds traditional hospital monitoring systems.",
+    description: "Clinically validated monitoring with accuracy that meets or exceeds traditional hospital systems.",
   },
   {
     icon: MonitorSmartphone,
