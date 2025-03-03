@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Baby, Brain, Heart, LineChart, MonitorSmartphone, Shield } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import QuoteCalculator from "@/components/QuoteCalculator";
 
 const Index = () => {
   return (
@@ -75,7 +76,7 @@ const Index = () => {
         </section>
 
         {/* Partners Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/10">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="font-display text-3xl font-bold text-foreground mb-16">
               Trusted by Leading Healthcare Providers
@@ -92,6 +93,12 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Quote generator */}
+        <div className="container mx-auto py-16">
+          <h1 className="text-4xl font-bold text-center mb-8">Business Equipment Quote Calculator</h1>
+          <QuoteCalculator />
+        </div>
 
         {/* CTA Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -121,12 +128,12 @@ const features = [
   {
     icon: Heart,
     title: "Personalized Monitoring",
-    description: "Adaptive monitoring system that learns and adjusts based on each baby's unique health patterns and needs.",
+    description: "Intelligent monitoring system that adapts in real time to each baby's unique health patterns and needs.",
   },
   {
     icon: Shield,
     title: "Hospital-Grade Precision",
-    description: "Research-backed monitoring accuracy that meets or exceeds traditional hospital monitoring systems.",
+    description: "Clinically validated monitoring with accuracy that meets or exceeds traditional hospital systems.",
   },
   {
     icon: MonitorSmartphone,

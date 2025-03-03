@@ -81,27 +81,29 @@ const Products = () => {
 
             <div className="grid md:grid-cols-3 gap-8">
               {subscriptionPlans.map((plan) => (
-                <Card key={plan.name} className="relative overflow-hidden">
+                <Card key={plan.name} className="relative overflow-hidden flex flex-col h-full">
                   {plan.popular && (
                     <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
                       Popular
                     </div>
                   )}
-                  <CardHeader>
-                    <CardTitle>{plan.name}</CardTitle>
-                    <CardDescription>{plan.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-4 mb-6">
-                      {plan.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2">
-                          <Shield className="h-4 w-4 text-primary" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
+                  <div className="flex-grow">
+                    <CardHeader>
+                      <CardTitle>{plan.name}</CardTitle>
+                      <CardDescription>{plan.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-4 min-h-[160px] flex flex-col justify-start">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2">
+                            <Shield className="h-4 w-4 text-primary" />
+                            <span className="text-sm text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </div>
+                  <CardFooter className="mt-auto">
                     <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
                       Start Free Trial
                     </Button>
@@ -168,7 +170,7 @@ const subscriptionPlans = [
   },
   {
     name: "Professional",
-    description: "Ideal for medium-sized hospitals and healthcare networks",
+    description: "Ideal for medium-sized healthcare networks",
     features: [
       "Advanced AI diagnostics",
       "Predictive analytics",
