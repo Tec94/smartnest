@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { ArrowRight, Zap, CheckCircle, Wind } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
@@ -23,22 +29,23 @@ const Index = () => {
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div className="absolute inset-0 bg-[url('/placeholder.svg')] opacity-5 bg-cover bg-center" />
           </div>
-          
+
           <div className="relative z-10 max-w-7xl mx-auto text-center">
             <span className="inline-block animate-fade-down">
               <div className="px-4 py-1 rounded-full bg-secondary/80 backdrop-blur-sm text-secondary-foreground text-sm font-medium mb-6">
                 Revolutionizing Neonatal Care with AI
               </div>
             </span>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-up delay-100">
               <span className="text-balance">Smart Care for Tiny Lives</span>
             </h1>
-            
+
             <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-8 animate-fade-up delay-200">
-              Advanced AI-powered incubator system providing real-time monitoring and predictive care for newborns.
+              Advanced AI-powered incubator system providing real-time
+              monitoring and predictive care for newborns.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4 animate-fade-up delay-300">
               <Link to="/about">
                 <Button size="lg" className="group">
@@ -63,7 +70,9 @@ const Index = () => {
                 Why Choose SmartNest.ai?
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our comprehensive solution combines cutting-edge AI technology with hospital-grade monitoring to ensure the best care for newborns.
+                Our comprehensive solution combines cutting-edge AI technology
+                with hospital-grade monitoring to ensure the best care for
+                newborns.
               </p>
             </div>
 
@@ -73,8 +82,12 @@ const Index = () => {
                   <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-display text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -98,15 +111,18 @@ const Index = () => {
                   stopOnInteraction: false,
                 }),
               ]}
-              className="w-full max-w-4xl mx-auto"
+              className="w-full max-w-5xl mx-auto"
             >
               <CarouselContent>
-                {[1, 2, 3, 4].map((i) => (
-                  <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/4">
+                {[1, 2, 3, 4, 1, 2, 3, 4].map((i, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="basis-full md:basis-1/2 lg:basis-1/3"
+                  >
                     <div className="p-4">
-                      <img 
-                        src={`./logos/prov${i}.jpg`} 
-                        alt={`Partner Logo ${i}`} 
+                      <img
+                        src={`./logos/prov${i}.jpg`}
+                        alt={`Partner Logo ${i}`}
                         className="h-16 w-full object-contain"
                       />
                     </div>
@@ -126,7 +142,8 @@ const Index = () => {
               Ready to Transform Neonatal Care?
             </h2>
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Join the revolution in neonatal care. Contact us to learn how SmartNest.ai can benefit your healthcare facility.
+              Join the revolution in neonatal care. Contact us to learn how
+              SmartNest.ai can benefit your healthcare facility.
             </p>
             <Link to="/products">
               <Button size="lg" variant="secondary" className="text-primary">
@@ -144,17 +161,20 @@ const features = [
   {
     icon: Zap,
     title: "Personalized Monitoring",
-    description: "Our intelligent system adapts in real-time to your baby's unique health patterns, providing insights that matter.",
+    description:
+      "Our intelligent system adapts in real-time to your baby's unique health patterns, providing insights that matter.",
   },
   {
     icon: CheckCircle,
     title: "Hospital-Grade Precision",
-    description: "Clinically validated accuracy that meets or exceeds traditional hospital systems, now available in your nursery.",
+    description:
+      "Clinically validated accuracy that meets or exceeds traditional hospital systems, now available in your nursery.",
   },
   {
     icon: Wind,
     title: "Complete Room Safety",
-    description: "Monitors temperature and humidity to ensure the nursery environment is always safe and comfortable.",
+    description:
+      "Monitors temperature and humidity to ensure the nursery environment is always safe and comfortable.",
   },
 ];
 
