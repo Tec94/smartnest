@@ -1,9 +1,8 @@
-
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Baby, Brain, Cloud, Shield, MonitorSmartphone } from "lucide-react";
+import { ArrowRight, Brain, Cloud, Shield, MonitorSmartphone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   return (
@@ -52,10 +51,12 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
-                <Button size="lg" className="group">
-                  Request a Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <Link to="/about" className="block mt-8">
+                  <Button size="lg" className="group">
+                    Request a Demo
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
               </div>
               <div className="relative animate-fade-up delay-200">
                 <div className="aspect-square rounded-2xl bg-secondary/50 p-8">
@@ -63,53 +64,6 @@ const Products = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Software Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-foreground mb-4">
-                SmartNest.ai Cloud Platform
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Powerful cloud-based monitoring and analytics platform for comprehensive neonatal care management.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {subscriptionPlans.map((plan) => (
-                <Card key={plan.name} className="relative overflow-hidden flex flex-col h-full">
-                  {plan.popular && (
-                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
-                      Popular
-                    </div>
-                  )}
-                  <div className="flex-grow">
-                    <CardHeader>
-                      <CardTitle>{plan.name}</CardTitle>
-                      <CardDescription>{plan.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-4 min-h-[160px] flex flex-col justify-start">
-                        {plan.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2">
-                            <Shield className="h-4 w-4 text-primary" />
-                            <span className="text-sm text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </div>
-                  <CardFooter className="mt-auto">
-                    <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
-                      Start Free Trial
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
@@ -123,9 +77,11 @@ const Products = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Contact our team to learn more about our products and how they can benefit your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary">
-              Get Started Today
-            </Button>
+            <Link to="/about">
+              <Button size="lg" variant="secondary" className="text-primary">
+                Get Started Today
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
@@ -153,46 +109,6 @@ const hardwareFeatures = [
     icon: Cloud,
     title: "Cloud Integration",
     description: "Seamless integration with SmartNest.ai cloud platform.",
-  },
-];
-
-const subscriptionPlans = [
-  {
-    name: "Starter",
-    description: "Perfect for small clinics and individual practices",
-    features: [
-      "Basic AI monitoring",
-      "Real-time alerts",
-      "Mobile app access",
-      "24/7 support",
-    ],
-    popular: false,
-  },
-  {
-    name: "Professional",
-    description: "Ideal for medium-sized healthcare networks",
-    features: [
-      "Advanced AI diagnostics",
-      "Predictive analytics",
-      "Multi-device support",
-      "Priority support",
-      "Custom alerting",
-      "API access",
-    ],
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    description: "Tailored solutions for large healthcare institutions",
-    features: [
-      "Full AI capabilities",
-      "Custom integrations",
-      "Dedicated support team",
-      "Training & onboarding",
-      "Advanced analytics",
-      "White-label options",
-    ],
-    popular: false,
   },
 ];
 
