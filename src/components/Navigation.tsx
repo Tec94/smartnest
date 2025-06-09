@@ -1,7 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
@@ -61,8 +60,12 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center gap-4 w-[200px] justify-end">
-            <Button variant="outline">Contact Sales</Button>
-            <Button>Get Started</Button>
+            <Link to="/about#contact">
+              <Button variant="outline">Contact Sales</Button>
+            </Link>
+            <Link to="/products">
+              <Button>Get Started</Button>
+            </Link>
           </div>
         </div>
       </div>

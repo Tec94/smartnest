@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Baby, Brain, Heart, LineChart, MonitorSmartphone, Shield } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ArrowRight, Zap, CheckCircle, Wind } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
-import QuoteCalculator from "@/components/QuoteCalculator";
+import { Link } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
 
 const Index = () => {
   return (
@@ -38,13 +40,17 @@ const Index = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 animate-fade-up delay-300">
-              <Button size="lg" className="group">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Get in Touch
-              </Button>
+              <Link to="/about">
+                <Button size="lg" className="group">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <Link to="/about#contact">
+                <Button size="lg" variant="outline">
+                  Get in Touch
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -61,8 +67,8 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {features.map((feature) => (
                 <Card key={feature.title} className="feature-card">
                   <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-primary" />
@@ -81,24 +87,37 @@ const Index = () => {
             <h2 className="font-display text-3xl font-bold text-foreground mb-16">
               Trusted by Leading Healthcare Providers
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              {[1, 2, 3, 4].map((i) => (
-                <img 
-                  key={i}
-                  src={`./logos/prov${i}.jpg`} 
-                  alt={`Logo ${i}`} 
-                  className="h-16 w-full max-w-[200px] object-contain"
-                />
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                  stopOnInteraction: false,
+                }),
+              ]}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                {[1, 2, 3, 4].map((i) => (
+                  <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/4">
+                    <div className="p-4">
+                      <img 
+                        src={`./logos/prov${i}.jpg`} 
+                        alt={`Partner Logo ${i}`} 
+                        className="h-16 w-full object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
-
-        {/* Quote generator */}
-        <div className="container mx-auto py-16">
-          <h1 className="text-4xl font-bold text-center mb-8">Business Equipment Quote Calculator</h1>
-          <QuoteCalculator />
-        </div>
 
         {/* CTA Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary">
@@ -109,9 +128,11 @@ const Index = () => {
             <p className="text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Join the revolution in neonatal care. Contact us to learn how SmartNest.ai can benefit your healthcare facility.
             </p>
-            <Button size="lg" variant="secondary" className="text-primary">
-              Get Started Today
-            </Button>
+            <Link to="/products">
+              <Button size="lg" variant="secondary" className="text-primary">
+                Get Started Today
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
@@ -121,34 +142,19 @@ const Index = () => {
 
 const features = [
   {
-    icon: Brain,
-    title: "AI-Driven Diagnostics",
-    description: "Advanced algorithms predict and alert for critical conditions in real-time, ensuring rapid response to potential health issues.",
-  },
-  {
-    icon: Heart,
+    icon: Zap,
     title: "Personalized Monitoring",
-    description: "Intelligent monitoring system that adapts in real time to each baby's unique health patterns and needs.",
+    description: "Our intelligent system adapts in real-time to your baby's unique health patterns, providing insights that matter.",
   },
   {
-    icon: Shield,
+    icon: CheckCircle,
     title: "Hospital-Grade Precision",
-    description: "Clinically validated monitoring with accuracy that meets or exceeds traditional hospital systems.",
+    description: "Clinically validated accuracy that meets or exceeds traditional hospital systems, now available in your nursery.",
   },
   {
-    icon: MonitorSmartphone,
-    title: "Remote Monitoring",
-    description: "Secure access for healthcare providers and parents to monitor vital signs and receive alerts from anywhere.",
-  },
-  {
-    icon: LineChart,
-    title: "Data Analytics",
-    description: "Comprehensive health trending and analysis tools to support informed medical decisions.",
-  },
-  {
-    icon: Baby,
-    title: "Comfort Optimization",
-    description: "Smart environmental controls maintain optimal temperature and humidity for baby's comfort.",
+    icon: Wind,
+    title: "Complete Room Safety",
+    description: "Monitors temperature and humidity to ensure the nursery environment is always safe and comfortable.",
   },
 ];
 
