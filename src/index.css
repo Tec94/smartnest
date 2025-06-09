@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -52,4 +51,26 @@
 
 .text-balance {
   text-wrap: balance;
+}
+
+/* Added for navigation link animation */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; /* Position the line just below the text */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
 }
