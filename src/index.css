@@ -12,7 +12,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 172 70% 50%;
+    --primary: 215 80% 60%;
     --primary-foreground: 210 40% 98%;
     --secondary: 199 95% 94%;
     --secondary-foreground: 215 25% 27%;
@@ -42,7 +42,7 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(224, 242, 254, 0.1) 100%);
+  background: linear-gradient(135deg, hsla(var(--primary), 0.1) 0%, rgba(224, 242, 254, 0.1) 100%);
 }
 
 .feature-card {

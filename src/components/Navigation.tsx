@@ -29,7 +29,18 @@ const DesktopNav = () => {
 
   return (
     <>
-      <div className="flex-1 flex justify-center">
+      {/* Left side: Logo */}
+      <div className="flex-1">
+        <Link
+          to="/"
+          className="font-display text-xl font-bold text-foreground"
+        >
+          SmartNest.ai
+        </Link>
+      </div>
+
+      {/* Center: Navigation Links */}
+      <div className="flex-none">
         <NavigationMenu>
           <NavigationMenuList className="gap-4">
             {navLinks.map((link) => (
@@ -49,7 +60,9 @@ const DesktopNav = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="flex items-center gap-4">
+
+      {/* Right side: Action Buttons */}
+      <div className="flex-1 flex justify-end items-center gap-4">
         <Link to="/about#contact">
           <Button variant="outline">Contact Sales</Button>
         </Link>
@@ -62,42 +75,50 @@ const DesktopNav = () => {
 };
 
 const MobileNav = () => (
-  <Sheet>
-    <SheetTrigger asChild>
-      <Button variant="outline" size="icon">
-        <Menu className="h-6 w-6" />
-        <span className="sr-only">Open menu</span>
-      </Button>
-    </SheetTrigger>
-    <SheetContent>
-      <div className="flex flex-col gap-6 pt-12">
-        {navLinks.map((link) => (
-          <SheetClose asChild key={link.href}>
-            <Link
-              to={link.href}
-              className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          </SheetClose>
-        ))}
-        <div className="border-t pt-6 flex flex-col gap-4">
-          <SheetClose asChild>
-            <Link to="/about#contact">
-              <Button variant="outline" className="w-full">
-                Contact Sales
-              </Button>
-            </Link>
-          </SheetClose>
-          <SheetClose asChild>
-            <Link to="/products">
-              <Button className="w-full">Get Started</Button>
-            </Link>
-          </SheetClose>
-        </div>
-      </div>
-    </SheetContent>
-  </Sheet>
+    <>
+      <Link
+        to="/"
+        className="font-display text-xl font-bold text-foreground"
+      >
+        SmartNest.ai
+      </Link>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon">
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Open menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent>
+          <div className="flex flex-col gap-6 pt-12">
+            {navLinks.map((link) => (
+              <SheetClose asChild key={link.href}>
+                <Link
+                  to={link.href}
+                  className="text-2xl font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </SheetClose>
+            ))}
+            <div className="border-t pt-6 flex flex-col gap-4">
+              <SheetClose asChild>
+                <Link to="/about#contact">
+                  <Button variant="outline" className="w-full">
+                    Contact Sales
+                  </Button>
+                </Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link to="/products">
+                  <Button className="w-full">Get Started</Button>
+                </Link>
+              </SheetClose>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
 );
 
 const Navigation = () => {
@@ -107,12 +128,6 @@ const Navigation = () => {
     <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link
-            to="/"
-            className="font-display text-xl font-bold text-foreground"
-          >
-            SmartNest.ai
-          </Link>
           {isMobile ? <MobileNav /> : <DesktopNav />}
         </div>
       </div>
