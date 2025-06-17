@@ -7,11 +7,11 @@
 @layer base {
   :root {
     --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 212 70% 14%; /* #0A2540 */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 212 70% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 212 70% 14%;
     --primary: 215 80% 60%;
     --primary-foreground: 210 40% 98%;
     --secondary: 199 95% 94%;
@@ -24,7 +24,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 215 80% 60%;
     --radius: 0.75rem;
   }
 
@@ -71,6 +71,48 @@
   transition: transform 0.3s ease-out;
 }
 
-.nav-link-underline:hover::after {
+.nav-link-underline:hover::after,
+.nav-link-active::after {
   transform: scaleX(1);
+}
+
+@layer components {
+  .hero-button-primary {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-0;
+    background-size: 200% auto;
+    transition: background-position 0.4s ease-in-out;
+  }
+
+  .hero-button-primary:hover {
+    background-position: right center;
+  }
+  
+  .hero-button-primary .arrow-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hero-button-primary:hover .arrow-icon {
+    transform: translateX(4px) rotate(-25deg);
+  }
+
+  .hero-button-secondary {
+    @apply relative overflow-hidden transition-colors duration-300 ease-in-out z-0;
+  }
+
+  .hero-button-secondary .btn-text {
+      @apply relative z-10;
+  }
+
+  .hero-button-secondary::before {
+    content: '';
+    @apply absolute top-0 left-0 h-full w-full bg-secondary -translate-x-full transform transition-transform duration-300 ease-in-out z-0;
+  }
+
+  .hero-button-secondary:hover::before {
+    @apply translate-x-0;
+  }
+  
+  .hero-button-secondary:hover {
+      @apply text-secondary-foreground border-secondary;
+  }
 }
