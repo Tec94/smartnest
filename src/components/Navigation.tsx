@@ -15,27 +15,27 @@ import {
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu } from "lucide-react";
+import Logo from "./ui/logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ];
 
 const DesktopNav = () => {
   const linkClassName =
-    "nav-link-underline group inline-flex h-auto w-max items-center justify-center rounded-lg bg-transparent px-3 pt-2 pb-3 text-sm font-medium transition-colors duration-200 ease-in-out hover:bg-white/10 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground";
+    "nav-link-underline group inline-flex h-auto w-max items-center justify-center rounded-lg bg-transparent px-3 pt-2 pb-3 text-sm font-medium transition-colors duration-200 ease-in-out focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-foreground";
 
   return (
     <>
       {/* Left side: Logo */}
       <div className="flex-1">
-        <Link
-          to="/"
-          className="font-display text-xl font-bold text-foreground"
-        >
-          SmartNest.ai
+        <Link to="/" className="flex items-center gap-2">
+          <Logo />
+          <span className="font-display text-xl font-bold text-foreground">
+            SmartNest.ai
+          </span>
         </Link>
       </div>
 
@@ -49,7 +49,7 @@ const DesktopNav = () => {
                   <NavigationMenuLink
                     className={cn(
                       linkClassName,
-                      window.location.pathname === link.href && "bg-white/20"
+                      window.location.pathname === link.href && "nav-link-active"
                     )}
                   >
                     {link.label}
@@ -63,11 +63,8 @@ const DesktopNav = () => {
 
       {/* Right side: Action Buttons */}
       <div className="flex-1 flex justify-end items-center gap-4">
-        <Link to="/about#contact">
-          <Button variant="outline">Contact Sales</Button>
-        </Link>
-        <Link to="/products">
-          <Button>Get Started</Button>
+        <Link to="/contact">
+          <Button>Contact Us</Button>
         </Link>
       </div>
     </>
@@ -76,11 +73,11 @@ const DesktopNav = () => {
 
 const MobileNav = () => (
     <>
-      <Link
-        to="/"
-        className="font-display text-xl font-bold text-foreground"
-      >
-        SmartNest.ai
+      <Link to="/" className="flex items-center gap-2">
+        <Logo />
+        <span className="font-display text-xl font-bold text-foreground">
+          SmartNest.ai
+        </span>
       </Link>
       <Sheet>
         <SheetTrigger asChild>
@@ -103,15 +100,8 @@ const MobileNav = () => (
             ))}
             <div className="border-t pt-6 flex flex-col gap-4">
               <SheetClose asChild>
-                <Link to="/about#contact">
-                  <Button variant="outline" className="w-full">
-                    Contact Sales
-                  </Button>
-                </Link>
-              </SheetClose>
-              <SheetClose asChild>
-                <Link to="/products">
-                  <Button className="w-full">Get Started</Button>
+                <Link to="/contact">
+                  <Button className="w-full">Contact Us</Button>
                 </Link>
               </SheetClose>
             </div>
