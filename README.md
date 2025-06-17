@@ -11,6 +11,5 @@ Features
 
 Tech Stack
 - Frontend: Next.js, React, TailwindCSS
-- Backend: Node.js, Express (if needed)
-- Database (optional): Firebase, PostgreSQL
-- Hosting: Vercel, AWS
+- Backend: Node.js
+- Hosting: Vercel
