@@ -33,9 +33,6 @@ const DesktopNav = () => {
       <div className="flex-1">
         <Link to="/" className="flex items-center gap-2">
           <Logo />
-          <span className="font-display text-xl font-bold text-foreground">
-            SmartNest.ai
-          </span>
         </Link>
       </div>
 
@@ -75,9 +72,6 @@ const MobileNav = () => (
     <>
       <Link to="/" className="flex items-center gap-2">
         <Logo />
-        <span className="font-display text-xl font-bold text-foreground">
-          SmartNest.ai
-        </span>
       </Link>
       <Sheet>
         <SheetTrigger asChild>
