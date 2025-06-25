@@ -42,16 +42,15 @@ const DesktopNav = () => {
           <NavigationMenuList className="gap-4">
             {navLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link to={link.href}>
-                  <NavigationMenuLink
-                    className={cn(
-                      linkClassName,
-                      window.location.pathname === link.href && "nav-link-active"
-                    )}
-                  >
-                    {link.label}
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink
+                  asChild
+                  className={cn(
+                    linkClassName,
+                    window.location.pathname === link.href && "nav-link-active"
+                  )}
+                >
+                  <Link to={link.href}>{link.label}</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>

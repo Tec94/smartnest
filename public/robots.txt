@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smartnest.health/sitemap.xml 
