@@ -5,7 +5,6 @@ import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { SwipeNavigator } from "@/components/SwipeNavigator";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const IndexContent = () => (
   <>
