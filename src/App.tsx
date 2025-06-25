@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import React, { Suspense, lazy } from "react";
 import ScrollToAnchor from "./components/ScrollToAnchor";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const Index = lazy(() => import("./pages/Index"));
 const Products = lazy(() => import("./pages/Products"));
