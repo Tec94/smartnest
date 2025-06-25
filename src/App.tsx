@@ -44,6 +44,7 @@ const App = () => (
         <AnimatedRoutes />
       </BrowserRouter>
       <Analytics />
+      <SpeedInsights />
     </TooltipProvider>
   </QueryClientProvider>
 );
